@@ -27,8 +27,9 @@ describe('TerrainComponent', () => {
     const TERRAIN_BACKGROUND_COLOR = 'green';
 
     const element: HTMLElement = fixture.nativeElement;
-    const elementTerrain = element.querySelector('div');
-
+    
+    const elementTerrain : HTMLElement | null = element.querySelector('.terrain');
+    
     expect(elementTerrain?.style.backgroundColor).toBe(TERRAIN_BACKGROUND_COLOR);
   });
 
