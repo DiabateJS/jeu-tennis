@@ -1,0 +1,17 @@
+.container {
+    border: 1px solid green;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        text-align: center;
+    }
+
+    img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

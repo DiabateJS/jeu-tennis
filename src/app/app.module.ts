@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TerrainComponent } from './terrain/terrain.component';
+import { ServerChoiceComponent } from './server-choice/server-choice.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TerrainComponent
+    TerrainComponent,
+    ServerChoiceComponent
   ],
   imports: [
     BrowserModule,

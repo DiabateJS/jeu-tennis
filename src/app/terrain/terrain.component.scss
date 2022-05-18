@@ -1,136 +1,235 @@
 $bloc-background-color: blue;
 $terrain-background-color: green;
-$terrain-separator: orange;
+$terrain-separator: gray;
 
-.terrain {
-    background-color: $terrain-background-color;
-    width: 600px;
-    height: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 25px;
-    padding-top: 15px;
+.container {
+    display: flex;
+    flex-direction: row;
 
-    .blocs-container {
-        width: 500px;
-        height: 625px;
-        margin-top:25px;
-        margin-left: auto;
-        margin-right: auto;
-        display: flex;
-        flex-direction: row;
+    .score-bloc {
+        width: 400px;
+        margin-right: 50px;
+        margin-top: 25px;
 
-        .left-bloc {
-            width: 60px;
-            height: 100%;
-            border: 2px solid white;
-            background-color: $bloc-background-color;
-
-        }
-
-        .center-blocs {
-            width: 367px;
-            height: 100%;
-            border: 2px solid white;
-
-            .center-blocs-1 {
-                width: 100%;
-                height: 24.5%;
-                border-bottom: 2px solid white;
-                background-color: $bloc-background-color;
-
-                .top-middle-bloc-separator {
-                    height: 15%;
-                    width: 50%;
-                    border-right: 4px solid white;
+        table {
+            border: 2px solid aqua;
+            margin-top: 25px;
+            margin-left: 50px;
+            width: 250px;
+            background-color: aqua;
+            tr {
+                padding: 5px;
+                margin-top: 5px;
+                height: 30px;
+                td {
+                    font-size: 24px;
+                    font-weight: bold;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 }
+            }
+        }
+    }
 
+    .terrain {
+        background-color: $terrain-background-color;
+        width: 600px;
+        height: 850px;
+        margin-top: 25px;
+        padding-top: 15px;
+
+        .player1-box {
+            margin-top: 10px;
+            margin-left: 50px;
+            margin-right: 50px;
+            height: 80px;
+            display: flex;
+            flex-direction: row;
+
+            .player-pos {
+                margin-top: 50px;
+                height: 25px;
+                width: 25%;
+                text-align: center;
             }
 
-            .center-blocs-2 {
-                width: 100%;
-                height: 25%;
-                border-bottom: 2px solid white;
-                display: flex;
-                flex-direction: row;
+            .selected-player-pos {
+                margin-top: 50px;
+                border-bottom: 4px solid yellowgreen;
+                height: 25px;
+                width: 25%;
+                text-align: center;
 
-                .bloc {
-                    width: 50%;
-                    height: 100%;
-                    border: 2px solid white;
+                .tennis-ball {
+                    width: 15px;
+                    height: 15px;
+                    background-color: orange;
+                    border-radius: 50%;
+                    margin: auto;
+                }
+            }
+        }
+
+        .player2-box {
+            margin-top: 20px;
+            margin-left: 50px;
+            margin-right: 50px;
+            height: 80px;
+            display: flex;
+            flex-direction: row;
+
+            .player-pos {
+                height: 25px;
+                width: 25%;
+                text-align: center;
+            }
+
+            .selected-player-pos {
+                border-bottom: 4px solid yellowgreen;
+                height: 25px;
+                width: 25%;
+                text-align: center;
+                padding: 5px;
+
+
+                .tennis-ball {
+                    width: 15px;
+                    height: 15px;
+                    background-color: orange;
+                    border-radius: 50%;
+                    margin: auto;
+                }
+            }
+        }
+    
+        .blocs-container {
+            width: 500px;
+            height: 625px;
+            margin-top:20px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: row;
+    
+            .left-bloc {
+                width: 60px;
+                height: 100%;
+                border: 2px solid white;
+                background-color: $bloc-background-color;
+    
+            }
+    
+            .center-blocs {
+                width: 367px;
+                height: 100%;
+                border: 2px solid white;
+    
+                .center-blocs-1 {
+                    width: 100%;
+                    height: 24.5%;
+                    border-bottom: 2px solid white;
+                    background-color: $bloc-background-color;
+    
+                    .top-middle-bloc-separator {
+                        height: 15%;
+                        width: 50%;
+                        border-right: 4px solid white;
+                    }
+    
+                }
+    
+                .center-blocs-2 {
+                    width: 100%;
+                    height: 25%;
+                    border-bottom: 2px solid white;
+                    display: flex;
+                    flex-direction: row;
+    
+                    .bloc {
+                        width: 50%;
+                        height: 100%;
+                        border: 2px solid white;
+                        background-color: $bloc-background-color;
+                        display: flex;
+                        flex-direction: column;
+    
+                        .sous-bloc-1 {
+                            width: 100%;
+                            height: 50%;
+                        }
+    
+                        .sous-bloc-2 {
+                            width: 100%;
+                            height: 50%;
+                            border-bottom: 4px solid $terrain-separator;
+                        }
+                    }
+                }
+    
+                .center-blocs-3 {
+                    width: 100%;
+                    height: 25%;
+                    border-bottom: 2px solid white;
+                    display: flex;
+                    flex-direction: row;
+    
+                    .bloc {
+                        width: 50%;
+                        height: 100%;
+                        border: 2px solid white;
+                        background-color: $bloc-background-color;
+                        display: flex;
+                        flex-direction: column;
+    
+                        .sous-bloc-1 {
+                            width: 100%;
+                            height: 50%;
+                            border-top: 4px solid $terrain-separator;
+                        }
+    
+                        .sous-bloc-2 {
+                            width: 100%;
+                            height: 50%;
+                        }
+                    }
+                }
+    
+                .center-blocs-4 {
+                    width: 100%;
+                    height: 24.5%;
+                    border-bottom: 2px solid white;
                     background-color: $bloc-background-color;
                     display: flex;
                     flex-direction: column;
-
+    
                     .sous-bloc-1 {
-                        width: 100%;
-                        height: 50%;
+                        height: 85%;
+                        width: 50%;
                     }
-
+    
                     .sous-bloc-2 {
-                        width: 100%;
-                        height: 50%;
-                        border-bottom: 4px solid $terrain-separator;
+                        height: 15%;
+                        width: 50%;
+                        border-right: 4px solid white;
                     }
+    
                 }
+                
             }
-
-            .center-blocs-3 {
-                width: 100%;
-                height: 25%;
-                border-bottom: 2px solid white;
-                display: flex;
-                flex-direction: row;
-
-                .bloc {
-                    width: 50%;
-                    height: 100%;
-                    border: 2px solid white;
-                    background-color: $bloc-background-color;
-                    display: flex;
-                    flex-direction: column;
-
-                    .sous-bloc-1 {
-                        width: 100%;
-                        height: 50%;
-                        border-top: 4px solid $terrain-separator;
-                    }
-
-                    .sous-bloc-2 {
-                        width: 100%;
-                        height: 50%;
-                    }
-                }
-            }
-
-            .center-blocs-4 {
-                width: 100%;
-                height: 24.5%;
-                border-bottom: 2px solid white;
+    
+            .right-bloc {
+                width: 60px;
+                height: 100%;
+                border: 2px solid white;
                 background-color: $bloc-background-color;
-                display: flex;
-                flex-direction: column;
-
-                .sous-bloc-1 {
-                    height: 85%;
-                    width: 50%;
-                }
-
-                .sous-bloc-2 {
-                    height: 15%;
-                    width: 50%;
-                    border-right: 4px solid white;
-                }
-
             }
-            
         }
+    }
 
-        .right-bloc {
-            width: 60px;
-            height: 100%;
-            border: 2px solid white;
-            background-color: $bloc-background-color;
-        }
+    .historic-bloc {
+        width: 400px;
+        margin-left: 50px;
+        margin-top: 25px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
     }
 }
