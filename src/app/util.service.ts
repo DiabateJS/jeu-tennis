@@ -7,8 +7,8 @@ export class UtilService {
 
   constructor() { }
 
-  getRandomNumber(): number {
-    return Math.floor((Math.random() * 100) + 1);
+  getRandomNumber(max: number): number {
+    return Math.floor((Math.random() * max) + 1);
   }
 
 }

@@ -1,38 +1,16 @@
 <div class="container">
     <div class="score-bloc">
-        <h2>JCDecaux Paris Tenis Tour</h2>
-        <table>
-            <tr>
-                <td>Joueur 1 (IA)</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>Joueur 2</td>
-                <td>0</td>
-            </tr>
-        </table>
-        <br>
-        <h2>Gestion position Joueur 2</h2>
-        <table>
-            <tr>
-                <td>Gauche</td>
-                <td>Droite</td>
-            </tr>
-        </table>
-        <br>
+        <app-score *ngIf="serverPlayer"></app-score>
         <app-server-choice (selectedServerPlayer)="getServerPlayer($event)"></app-server-choice>
 
 
     </div>
     <div class="terrain">
         <div class="player1-box">
-            <div class="player-pos"></div>
-            <div class="selected-player-pos">
-                Joueur 1 (IA)
-                <div class="tennis-ball"></div>
+            <div *ngFor="let index of iaPositions" [className]="index === 1 ? 'selected-player-pos' : 'player-pos'">
+                {{ index ===  1 ? 'Joueur 1 (IA)' : '' }}
+                <div class="tennis-ball" *ngIf="serverPlayer === 'Joueur 1'"></div>
             </div>
-            <div class="player-pos"></div>
-            <div class="player-pos"></div>
         </div>
         <div class="blocs-container">
             <div class="left-bloc">
@@ -70,17 +48,14 @@
             </div>
         </div>
         <div class="player2-box">
-            <div class="player-pos"></div>
-            <div class="player-pos"></div>
-            <div class="selected-player-pos">
-                <div class="tennis-ball"></div>
-                Joueur 2
+            <div [className]="index === 1 ? 'selected-player-pos' : 'player-pos'" *ngFor="let index of player2Positions">
+                <div *ngIf="index === 1 && serverPlayer === 'Joueur 2' " class="tennis-ball"></div>
+                {{ index === 1 ? 'Joueur 2' : '' }}
             </div>
-            <div class="player-pos"></div>
         </div>
     </div>
-    <div class="historic-bloc">
-        <h3>Historique de jeu</h3>
-        <span *ngIf="serverPlayer">Selection du serveur : {{ serverPlayer }}</span>
+    <div class="right-side-bloc">
+        <app-historic *ngIf="serverPlayer" [serverPlayer]="serverPlayer"></app-historic>
+        <app-player2-positions-manager *ngIf="serverPlayer" (player2Action)="getPlayer2Action($event)"></app-player2-positions-manager>
     </div>
 </div>

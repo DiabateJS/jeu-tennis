@@ -35,7 +35,7 @@ export class ServerChoiceComponent implements OnInit {
   }
 
   selectServerPlayer(): string {
-    const rndNumber: number = this.utilService.getRandomNumber();
+    const rndNumber: number = this.utilService.getRandomNumber(100);
     return rndNumber % 2 == 0 ? 'Joueur 1' : 'Joueur 2';
   }
 

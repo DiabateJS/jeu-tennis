@@ -5,6 +5,7 @@ $terrain-separator: gray;
 .container {
     display: flex;
     flex-direction: row;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     .score-bloc {
         width: 400px;
@@ -12,11 +13,11 @@ $terrain-separator: gray;
         margin-top: 25px;
 
         table {
-            border: 2px solid aqua;
+            /*border: 2px solid aqua;*/
             margin-top: 25px;
             margin-left: 50px;
             width: 250px;
-            background-color: aqua;
+            /*background-color: aqua;*/
             tr {
                 padding: 5px;
                 margin-top: 5px;
@@ -225,7 +226,7 @@ $terrain-separator: gray;
         }
     }
 
-    .historic-bloc {
+    .right-side-bloc {
         width: 400px;
         margin-left: 50px;
         margin-top: 25px;
