@@ -1,7 +1,7 @@
 <div class="container">
     <div class="score-bloc">
         <app-score *ngIf="serverPlayer"></app-score>
-        <app-server-choice (selectedServerPlayer)="getServerPlayer($event)"></app-server-choice>
+        <app-server-choice *ngIf="!serverPlayer" (selectedServerPlayer)="getServerPlayer($event)"></app-server-choice>
 
 
     </div>
